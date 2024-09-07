@@ -2,8 +2,7 @@ import React, { useContext } from "react";
 import { DatePickerContext } from "../Context/DPcontext";
 
 const DateRecurrence = () => {
-  const { recurrencePattern, setRecurrencePattern } =
-    useContext(DatePickerContext);
+  const { pattern, setPattern } = useContext(DatePickerContext);
 
   const options = ["Daily", "Weekly", "Monthly", "Yearly"];
 
@@ -13,8 +12,8 @@ const DateRecurrence = () => {
         Recurrence Pattern
       </label>
       <select
-        value={recurrencePattern}
-        onChange={(e) => setRecurrencePattern(e.target.value)}
+        value={pattern}
+        onChange={(e) => setPattern(e.target.value)}
         className="block w-1/2 mt-1 p-2 border border-gray-300 rounded"
       >
         {options.map((option) => (

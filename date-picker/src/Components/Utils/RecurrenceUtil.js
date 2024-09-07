@@ -1,8 +1,4 @@
-export const generatePreviewDates = (
-  pattern,
-  startDate,
-  endDate
-) => {
+export const generatePreviewDates = (pattern, startDate, endDate) => {
   if (!startDate || isNaN(new Date(startDate).getTime())) return [];
   let dates = [];
   let currentDate = new Date(startDate);
@@ -13,7 +9,7 @@ export const generatePreviewDates = (
       dates.length < 365
     ) {
       dates.push(new Date(currentDate).toDateString());
-      currentDate.setDate(currentDate.getDate() + 1); // Daily interval
+      currentDate.setDate(currentDate.getDate() + 1);
     }
   } else if (pattern === "Weekly") {
     while (
@@ -21,7 +17,7 @@ export const generatePreviewDates = (
       dates.length < 52
     ) {
       dates.push(new Date(currentDate).toDateString());
-      currentDate.setDate(currentDate.getDate() + 7); // Weekly interval
+      currentDate.setDate(currentDate.getDate() + 7);
     }
   } else if (pattern === "Monthly") {
     while (
@@ -29,7 +25,7 @@ export const generatePreviewDates = (
       dates.length < 12
     ) {
       dates.push(new Date(currentDate).toDateString());
-      currentDate.setMonth(currentDate.getMonth() + 1); // Monthly interval
+      currentDate.setMonth(currentDate.getMonth() + 1);
     }
   } else if (pattern === "Yearly") {
     while (
@@ -37,7 +33,7 @@ export const generatePreviewDates = (
       dates.length < 10
     ) {
       dates.push(new Date(currentDate).toDateString());
-      currentDate.setFullYear(currentDate.getFullYear() + 1); // Yearly interval
+      currentDate.setFullYear(currentDate.getFullYear() + 1);
     }
   }
 

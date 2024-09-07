@@ -7,8 +7,8 @@ const DateRange = () => {
 
   return (
     <div className="mb-4">
-      <label className="block text-gray-900 text-2xl font-large mb-2">Date Range :</label>
-      <div className="grid grid-cols-2 gap-4">
+      <label className="block text-gray-900 text-2xl font-large mb-2 ">Date Range :</label>
+      <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <input
           type="date"
           value={startDate}

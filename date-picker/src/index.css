@@ -4,5 +4,5 @@
 
 :root {
   font-family: "Gentium Plus", serif;
-  background-image: linear-gradient(to right, gray, white);
+  background-image: linear-gradient(to right, rgb(245, 182, 182), rgb(204, 198, 198));
 }

@@ -4,25 +4,21 @@ import { generatePreviewDates } from "../Components/Utils/RecurrenceUtil";
 export const DatePickerContext = createContext();
 
 export const DatePickerProvider = ({ children }) => {
-  const [recurrencePattern, setRecurrencePattern] = useState("Daily");
+  const [pattern, setPattern] = useState("Daily");
   const [startDate, setStartDate] = useState("");
   const [endDate, setEndDate] = useState("");
   const [previewDates, setPreviewDates] = useState([]);
 
   useEffect(() => {
-    const updatedDates = generatePreviewDates(
-      recurrencePattern,
-      startDate,
-      endDate
-    );
+    const updatedDates = generatePreviewDates(pattern, startDate, endDate);
     setPreviewDates(updatedDates);
-  }, [recurrencePattern, startDate, endDate]);
+  }, [pattern, startDate, endDate]);
 
   return (
     <DatePickerContext.Provider
       value={{
-        recurrencePattern,
-        setRecurrencePattern,
+        pattern,
+        setPattern,
         startDate,
         setStartDate,
         endDate,

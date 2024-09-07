@@ -20,7 +20,9 @@ const DatePreview = () => {
           </div>
         </>
       ) : (
-        <p className="text-gray-900 text-lg">No recurring dates selected yet.</p>
+        <p className="text-gray-900 text-lg">
+          No recurring dates selected yet.
+        </p>
       )}
     </div>
   );

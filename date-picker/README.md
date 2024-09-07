@@ -7,7 +7,6 @@ Features:
 - Allow users to select recurring dates
 - Recurring Options: Users are allowed to select different recurring patterns -
   Daily, Weekly, Monthly, Yearly
-- Customization: Allow users to fine-tune the recurrence - Every X days/weeks/months/years, Specific days of the week, nth day of the month (e.g., the second Tuesday).
 
 Explore live : https://pick-date.netlify.app
 
