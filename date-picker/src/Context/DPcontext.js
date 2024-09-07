@@ -1,18 +1,36 @@
-import React, {createContext ,useState} from 'react'
+import React, { createContext, useState, useEffect } from "react";
+import { generatePreviewDates } from "../Components/Utils/RecurrenceUtil";
 
-const DPcontext = createContext();
+export const DatePickerContext = createContext();
 
-export const DPprovider = ({children}) => {
-    const [recurrence, setRecurrence] = useState({
-        pattern: 'daily',
-        interval: 1,
-        daysOfWeek: [],
-        nthDay: 1,
-        startDate: null,
-        endDate: null,
-    });
+export const DatePickerProvider = ({ children }) => {
+  const [recurrencePattern, setRecurrencePattern] = useState("Daily");
+  const [startDate, setStartDate] = useState("");
+  const [endDate, setEndDate] = useState("");
+  const [previewDates, setPreviewDates] = useState([]);
+
+  useEffect(() => {
+    const updatedDates = generatePreviewDates(
+      recurrencePattern,
+      startDate,
+      endDate
+    );
+    setPreviewDates(updatedDates);
+  }, [recurrencePattern, startDate, endDate]);
+
   return (
-    <DPcontext.Provider value={{recurrence, setRecurrence}}>{children}</DPcontext.Provider>
+    <DatePickerContext.Provider
+      value={{
+        recurrencePattern,
+        setRecurrencePattern,
+        startDate,
+        setStartDate,
+        endDate,
+        setEndDate,
+        previewDates,
+      }}
+    >
+      {children}
+    </DatePickerContext.Provider>
   );
 };
-export default DPcontext;

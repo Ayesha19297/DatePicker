@@ -1,12 +1,15 @@
 import React from "react";
-import { DPprovider } from "./Context/DPcontext";
+import DatePicker from "./Components/DatePicker";
 
 const App = () => {
   return (
     <div>
-      <DPprovider>
-        <h1 className="text-center text-4xl font-semibold">Date picker</h1>
-      </DPprovider>
+      <div className="container mx-auto">
+        <h1 className="py-4 text-4xl font-bold text-center">
+          Recurring Date Picker
+        </h1>
+        <DatePicker />
+      </div>
     </div>
   );
 };
